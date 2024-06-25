@@ -10,25 +10,23 @@
 
 html, body {
     height: 100%;
-    margin: 0;
 }
 
 body {
     background-image: url(download4.jpg);
     background-repeat: no-repeat;
-    height: 100vh;
     background-position: center;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
 }
 
-.bg::after { 
+.bg::after {
     content: '';
     display: block;
     height: 100vh;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     background-size: cover;
-    z-index: -1;   
+    z-index: -1;
 }
 
 .bg {
@@ -39,105 +37,81 @@ body {
 }
 
 .container {
-    background: linear-gradient(to top, rgba(19,19,19,1) 0%, rgba(25,25,25,1) 81%, rgba(46,46,46,1) 100%);
+    background: linear-gradient(to top, rgba(19, 19, 19, 1) 0%, rgba(25, 25, 25, 1) 81%, rgba(46, 46, 46, 1) 100%);
     border-radius: 30px;
     width: 85%;
-    max-width: 600px;
+    max-width: 600px; /* Menambahkan max-width untuk memastikan kontainer tidak terlalu lebar pada layar besar */
+    height: auto;
     box-shadow: 0px 0px 50px #000000;
+    margin: 30px auto; /* Mengatur margin secara otomatis */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Menengahkan konten secara vertikal dan horizontal */
-    padding: 40px 20px;
-    text-align: center;
+    justify-content: center;
+    padding: 65px 0; /* Mengurangi padding atas dan bawah untuk responsifitas */
 }
 
+.container .content {
+    position: relative;
+    top: 1%;
+}
 
 .container .profile-picture {
     width: 130px;
     height: 130px;
     background-image: url(download7.jpg);
-    background-size: cover; /* Mengisi kontainer dengan baik */
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
-    align-self: center; /* Menengahkan gambar profil secara vertikal */
-}
-
-@media (min-width: 992px) {
-    .container {
-        width: 600px;
-        padding: 40px;
-    }
-
-    .container .profile-picture {
-        width: 135px;
-        height: 135px;
-    }
-
-    .container .name h3 {
-        font-size: 28px;
-    }
-
-    .container .name h5 {
-        font-size: 16px;
-        letter-spacing: 2px;
-    }
-
-    .container .find-me p {
-        font-size: 16px;
-    }
-
-    .social a {
-        font-size: 20px;
-        padding: 10px 15px;
-    }
+    margin: 20px auto; /* Mengatur margin secara otomatis */
 }
 
 .container .name h3 {
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
     margin-top: 15px;
     color: #FEAE6F;
-    font-weight: 600;
-    font-size: 5vw;
+    font-size: 23px;
     letter-spacing: 2px;
 }
 
 .container .name h5 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3.5vw;
+    font-family: 'Arial', Helvetica, sans-serif;
+    text-align: center;
+    font-size: 13px;
     margin-top: 3px;
     font-weight: lighter;
     color: whitesmoke;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 
 .container .find-me p {
-    font-size: 3.5vw;
+    font-size: 18px;
     font-family: 'Roboto Slab', serif;
     color: rgb(160, 157, 157);
     font-weight: normal;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
 .social {
-    margin-top: 15px;
+    margin-top: 8px; /* Mengatur margin secara otomatis */
     display: flex;
-    gap: 10px;
+    gap: 5px; /* Menggunakan 'gap' untuk jarak antar kolom */
     justify-content: center;
 }
 
 .social a {
-    font-size: 5vw;
+    font-size: 2em;
     background-color: #18191f;
     color: #fff;
-    box-shadow: 2px 2px 5px #00000080, 4px 4px 10px #00000080,
-                2px 2px 10px #00000080, 2px 2px 3px #00000080,
-                inset 2px 2px 5px #00000080, inset 2px 2px 5px #00000080,
-                inset 2px 2px 5px #00000080, inset 2px 2px 5px #00000080;
+    box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080, 2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px 10px;
+    margin: 0 20px;
     animation: animate 3s linear infinite;
-    text-shadow: 0 0 20px #0072ff, 0 0 40px #0072ff, 0 0 60px #0072ff, 0 0 80px #0072ff;
+    text-shadow: 0 0 40px #0072ff, 0 0 80px #0072ff, 0 0 140px #0072ff, 0 0 200px #0072ff;
 }
 
 #twitter {
@@ -165,32 +139,31 @@ body {
     }
 }
 
+/* Media Query untuk layar desktop */
 @media (min-width: 992px) {
     .container {
-        width: 600px;
-        padding: 40px;
+        padding: 50px 0; /* Mengubah padding atas dan bawah untuk layar desktop */
     }
 
     .container .profile-picture {
         width: 135px;
         height: 135px;
+        margin-top: 30px;
     }
 
     .container .name h3 {
-        font-size: 28px;
+        font-size: 33px;
     }
 
     .container .name h5 {
-        font-size: 16px;
-        letter-spacing: 2px;
+        font-size: 13px;
+        letter-spacing: 3px;
+        font-family: 'Arial', Helvetica, sans-serif;
+        font-weight: normal;
     }
 
-    .container .find-me p {
-        font-size: 16px;
-    }
-
-    .social a {
-        font-size: 20px;
-        padding: 10px 15px;
+    .social {
+        margin-top: 15px;
+        gap: 10px; /* Menyesuaikan jarak antar ikon pada layar desktop */
     }
 }
