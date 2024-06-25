@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="bg">
         <div class="container">
             <div class="content">
-                <div class="profile-picture"></div>
+                <div class="profile-picture">
+                    <!-- Foto Profil bisa dimasukkan di sini jika ada -->
+                </div>
                 <div class="name">
                     <h3>Zaid Abdullah</h3>
                     <h5>SMK Teknik Komputer dan Jaringan</h5>
@@ -42,32 +41,5 @@
             </div>
         </div>
     </div>
-    <script>
-        // Fungsi untuk menyesuaikan ukuran teks agar tetap proporsional dengan ukuran layar
-        function adjustTextSize() {
-            const nameH3 = document.querySelector('.name h3');
-            const nameH5 = document.querySelectorAll('.name h5');
-            const findMeP = document.querySelector('.find-me p');
-            const socialIcons = document.querySelectorAll('.social a');
-
-            if (window.innerWidth < 992) {
-                nameH3.style.fontSize = '5vw';
-                nameH5.forEach(h5 => h5.style.fontSize = '3.5vw');
-                findMeP.style.fontSize = '3.5vw';
-                socialIcons.forEach(icon => icon.style.fontSize = '5vw');
-            } else {
-                nameH3.style.fontSize = '28px';
-                nameH5.forEach(h5 => h5.style.fontSize = '16px');
-                findMeP.style.fontSize = '16px';
-                socialIcons.forEach(icon => icon.style.fontSize = '20px');
-            }
-        }
-
-        // Panggil fungsi saat halaman dimuat
-        window.onload = adjustTextSize;
-
-        // Panggil fungsi setiap kali ukuran jendela berubah
-        window.onresize = adjustTextSize;
-    </script>
 </body>
 </html>
