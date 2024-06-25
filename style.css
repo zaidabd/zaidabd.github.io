@@ -47,19 +47,49 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Menengahkan konten secara vertikal dan horizontal */
     padding: 40px 20px;
     text-align: center;
 }
+
 
 .container .profile-picture {
     width: 130px;
     height: 130px;
     background-image: url(download7.jpg);
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* Mengisi kontainer dengan baik */
     border-radius: 50%;
-    align-self: center;
+    align-self: center; /* Menengahkan gambar profil secara vertikal */
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 600px;
+        padding: 40px;
+    }
+
+    .container .profile-picture {
+        width: 135px;
+        height: 135px;
+    }
+
+    .container .name h3 {
+        font-size: 28px;
+    }
+
+    .container .name h5 {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .container .find-me p {
+        font-size: 16px;
+    }
+
+    .social a {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
 }
 
 .container .name h3 {
